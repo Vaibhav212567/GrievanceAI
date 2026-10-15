@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>GrievanceAI | Submit a grievance</title>
+<style>
+:root{--bg:#0b1020;--panel:#111a2e;--border:#29354e;--text:#eaf0fc;--muted:#95a4bf;--blue:#6482ff;--green:#76dfb9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1a2a50 0%,var(--bg) 52%);color:var(--text);font:15px Inter,system-ui,Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}.wrap{max-width:1050px;margin:auto;padding:28px 20px 24px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:60px}.brand{font-weight:850;font-size:20px;display:flex;gap:10px;align-items:center}.logo{background:var(--blue);padding:9px;border-radius:10px}.admin{color:#b8c5e1;text-decoration:none;font-size:13px;border:1px solid #35425c;padding:9px 13px;border-radius:8px}.hero{max-width:680px;margin:0 auto 30px;text-align:center}.eyebrow{font-size:11px;letter-spacing:2px;color:#a8b7ff;font-weight:800}.hero h1{font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-1.4px;margin:15px 0}.hero p{color:var(--muted);line-height:1.7;margin:0 auto;max-width:590px}.panel{max-width:700px;margin:auto;border:1px solid var(--border);background:rgba(17,26,46,.94);border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 24px 80px #0003}.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:23px}.head h2{margin:0;font-size:19px}.tag{font-size:10px;letter-spacing:.7px;font-weight:800;color:#b8c5ff;background:#222f50;padding:7px 9px;border-radius:6px}.field{width:100%;padding:13px;background:#0c1426;border:1px solid #35425c;border-radius:8px;color:var(--text);margin:8px 0 18px;outline:none}.field:focus{border-color:#7992ff}label{font-size:12px;color:#b8c5dc;font-weight:650}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.btn{border:1px solid var(--blue);border-radius:8px;padding:13px 16px;background:var(--blue);color:white;font-weight:750;width:100%;cursor:pointer}.btn:disabled{opacity:.65;cursor:wait}.notice{font-size:12px;line-height:1.65;color:#a6e6ee;border:1px solid #315170;background:#172a3b;padding:12px;border-radius:8px;margin-top:17px}.result{display:none;margin-top:18px;border:1px solid #3c806c;background:#17372f;border-radius:10px;padding:17px;line-height:1.6}.result strong{color:#8be5c8}.receipt{font-size:24px;font-weight:850;letter-spacing:.5px;margin:8px 0}.error{display:none;margin-top:15px;color:#ffa3af;font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:25px auto 0}.step{border:1px solid #27334c;background:#111a2e88;border-radius:10px;padding:15px}.step b{display:block;font-size:12px;margin:8px 0 5px}.step span{color:var(--muted);font-size:11px;line-height:1.5}.step i{font-style:normal;color:#a8b7ff;font-size:18px}.foot{text-align:center;color:#71809a;font-size:11px;padding:35px 0 10px}@media(max-width:560px){.wrap{padding:18px 12px}.top{margin-bottom:43px}.hero h1{letter-spacing:-.7px}.two,.steps{grid-template-columns:1fr}.panel{border-radius:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><span class="logo">✦</span><span>Grievance<span style="color:#91a4ff">AI</span></span></div><a class="admin" href="/admin/login">Administrator login ↗</a></header>
+<section class="hero"><div class="eyebrow">A CLEARER WAY TO BE HEARD</div><h1>Raise an issue.<br><span style="color:#91a4ff">Start a resolution.</span></h1><p>Submit a public-service grievance in a few simple steps. Your complaint will be categorized and prioritized for review.</p></section>
+<section class="panel"><div class="head"><h2>Submit a grievance</h2><span class="tag">PUBLIC FORM</span></div>
+<form id="form"><label for="title">Grievance title *</label><input class="field" id="title" name="title" maxlength="160" required placeholder="e.g. Street light not working on Main Road">
+<label for="description">Describe the issue *</label><textarea class="field" id="description" name="description" rows="5" maxlength="5000" required placeholder="Explain what happened, where it happened, and how it affects you."></textarea>
+<div class="two"><div><label for="location">Area or locality (optional)</label><input class="field" id="location" name="location" maxlength="160" placeholder="e.g. Sector 4"></div><div><label>What happens next?</label><div style="color:var(--muted);font-size:12px;line-height:1.6;padding:10px 0 0">You’ll receive a reference ID after submitting. Keep it for your records.</div></div></div>
+<button class="btn" id="submit" type="submit">✦ Submit grievance securely</button></form>
+<div class="error" id="error" role="alert"></div><div class="result" id="result" role="status"><strong>Submission received</strong><div>Your reference ID is:</div><div class="receipt" id="receipt"></div><div>Save this ID for your records. The public page does not display other people's grievance details.</div></div>
+<div class="notice">Please do not include passwords, bank details, government ID numbers, or other highly sensitive personal information in your complaint.</div></section>
+<section class="steps"><div class="step"><i>01</i><b>Submit your issue</b><span>Describe the concern and its location.</span></div><div class="step"><i>02</i><b>Automated triage</b><span>Rules suggest a category and priority for staff review.</span></div><div class="step"><i>03</i><b>Staff review</b><span>Authorized administrators manage and update cases.</span></div></section>
+<footer class="foot">GrievanceAI · Public grievance submission portal</footer>
+</div>
+<script>
+const form=document.getElementById('form'),button=document.getElementById('submit'),error=document.getElementById('error'),result=document.getElementById('result');
+form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';result.style.display='none';button.disabled=true;button.textContent='Submitting…';
+try{const payload=Object.fromEntries(new FormData(form).entries());const response=await fetch('/api/grievances',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await response.json();if(!response.ok)throw new Error(data.error||'Unable to submit right now. Please try again.');document.getElementById('receipt').textContent=data.id;result.style.display='block';form.reset();result.scrollIntoView({behavior:'smooth',block:'center'});}
+catch(err){error.textContent=err.message||'Something went wrong. Please try again.';error.style.display='block';}
+finally{button.disabled=false;button.textContent='✦ Submit grievance securely';}});
+</script>
+</body></html>
